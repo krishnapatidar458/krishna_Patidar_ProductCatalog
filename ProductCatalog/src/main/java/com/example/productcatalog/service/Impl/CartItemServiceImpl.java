@@ -1,4 +1,4 @@
-package com.example.productcatalog.service.impl;
+package com.example.productcatalog.service.Impl;
 
 import com.example.productcatalog.dto.CartItemDTO;
 import com.example.productcatalog.entity.CartItem;

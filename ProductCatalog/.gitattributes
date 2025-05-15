@@ -1,2 +1,44 @@
 /mvnw text eol=lf
 *.cmd text eol=crlf
+# Handle line endings automatically
+* text=auto
+
+# Ensure all Java-related files use LF (Unix-style) line endings
+*.java text eol=lf
+*.xml text eol=lf
+*.properties text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+
+# Treat Markdown files as text (helpful for docs)
+*.md text
+
+# Treat shell scripts as text and ensure LF endings
+*.sh text eol=lf
+
+# Treat batch scripts as text (Windows)
+*.bat text eol=crlf
+
+# Exclude binary files from diff
+*.jar binary
+*.war binary
+*.zip binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.pdf binary
+*.ico binary
+
+# Specific for JSON and HTML
+*.json text eol=lf
+*.html text eol=lf
+*.js text eol=lf
+*.css text eol=lf
+
+# Ignore IntelliJ, Eclipse, and VS Code project files from linguist stats
+*.iml linguist-vendored
+*.classpath linguist-vendored
+*.project linguist-vendored
+.vscode/* linguist-vendored
+.idea/* linguist-vendored

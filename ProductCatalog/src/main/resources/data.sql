@@ -17,3 +17,8 @@ INSERT INTO cart_items (id, product_id, quantity)
 VALUES
   (1, 2, 1),
   (2, 3, 2);
+
+-- Password: password123 (BCrypt)
+INSERT INTO users (id, username, password) VALUES
+(1, 'user1', '$2a$10$gO5JzJPEqY8AeZBFxFmm5OlCHkLbKGlZ.0c5QlzN3DQFtAIEBLRei'),
+(2, 'admin1', '$2a$10$gO5JzJPEqY8AeZBFxFmm5OlCHkLbKGlZ.0c5QlzN3DQFtAIEBLRei');

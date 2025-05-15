@@ -23,3 +23,9 @@ CREATE TABLE cart_items (
     quantity INT,
     FOREIGN KEY (product_id) REFERENCES products(id)
 );
+
+CREATE TABLE users (
+    id BIGINT PRIMARY KEY,
+    username VARCHAR(100) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL
+);

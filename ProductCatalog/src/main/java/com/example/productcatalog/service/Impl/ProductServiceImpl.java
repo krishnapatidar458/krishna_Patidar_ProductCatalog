@@ -1,11 +1,11 @@
 package com.example.productcatalog.service.Impl;
 
-import com.example.productcatalog.config.ModelMapperConfig;
 import com.example.productcatalog.dto.FilterRequest;
 import com.example.productcatalog.dto.ProductDTO;
 import com.example.productcatalog.dto.SearchRequest;
 import com.example.productcatalog.entity.Product;
 import com.example.productcatalog.enums.SortOption;
+import com.example.productcatalog.exception.ProductNotFoundException;
 import com.example.productcatalog.repository.ProductRepository;
 import com.example.productcatalog.service.ProductService;
 import org.modelmapper.ModelMapper;
@@ -35,7 +35,7 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public ProductDTO getProductById(Long id) {
         Product product = productRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Product not found"));
+                .orElseThrow(() -> new ProductNotFoundException("Product not found with id: " + id));
         return modelMapper.map(product, ProductDTO.class);
     }
 
@@ -49,7 +49,7 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public ProductDTO updateProduct(Long id, ProductDTO productDTO) {
         Product existingProduct = productRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Product not found"));
+                .orElseThrow(() -> new ProductNotFoundException("Product not found with id: " + id));
 
         existingProduct.setName(productDTO.getName());
         existingProduct.setDescription(productDTO.getDescription());
@@ -66,7 +66,7 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public void deleteProduct(Long id) {
         Product product = productRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Product not found"));
+                .orElseThrow(() -> new ProductNotFoundException("Product not found with id: " + id));
         productRepository.delete(product);
     }
 
