@@ -31,5 +31,5 @@ public class WishlistController {
     public ResponseEntity<String> removeItemFromWishlist(@PathVariable Long id) {
         wishlistService.removeItem(id);
         return ResponseEntity.ok("Item removed from wishlist successfully.");
-    }
+    }// i missed to show sry for that.
 }

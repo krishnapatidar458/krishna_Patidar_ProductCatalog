@@ -16,7 +16,5 @@ public class ProductDTO {
     private String brand;
     private String color;
     private double rating;
-
-    public ProductDTO(long l, String s, String apple, String mobile, String black, double v, double v1) {
-    }
+    private String imageUrl;
 }

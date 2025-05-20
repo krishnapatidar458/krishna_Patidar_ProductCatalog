@@ -2,6 +2,7 @@ package com.example.productcatalog.controller;
 
 import com.example.productcatalog.dto.FilterRequest;
 import com.example.productcatalog.dto.ProductDTO;
+import com.example.productcatalog.dto.SearchRequest;
 import com.example.productcatalog.enums.SortOption;
 import com.example.productcatalog.service.ProductService;
 import jakarta.validation.Valid;
@@ -29,7 +30,7 @@ public class ProductController {
     }
 
     @PostMapping
-    public ResponseEntity<ProductDTO> createProduct(@Valid @RequestBody ProductDTO productDTO) {
+    public ResponseEntity<ProductDTO> createProduct( @RequestBody ProductDTO productDTO) {
         ProductDTO createdProduct = productService.createProduct(productDTO);
         return ResponseEntity.ok(createdProduct);
     }
@@ -57,4 +58,9 @@ public class ProductController {
         return ResponseEntity.ok(filtered);
     }
 
+    @PostMapping("/search")
+    public ResponseEntity<List<ProductDTO>> searchProducts(@Valid @RequestBody SearchRequest request) {
+        List<ProductDTO> results = productService.searchProducts(request);
+        return ResponseEntity.ok(results);
+    }
 }

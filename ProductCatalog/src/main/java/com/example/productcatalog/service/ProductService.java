@@ -18,4 +18,5 @@ public interface ProductService {
     List<ProductDTO> searchProducts(SearchRequest request);
 
     List<ProductDTO> filterProducts(FilterRequest filterRequest);
+
 }
