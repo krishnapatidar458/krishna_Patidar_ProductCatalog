@@ -22,7 +22,7 @@ This Spring Boot application provides secure, JWT-protected REST APIs to manage 
 ## 📬 Postman API Test Collection
 
 You can find the full Postman test collection in this GitHub repository:
-📂 [krishna\_Patidar\_ProductCatalog Postman Collection](https://github.com/krishnapatidar458/krishna_Patidar_ProductCatalog/tree/main/Postman)
+📂 [krishna\_Patidar\_ProductCatalog Postman Collection](https://github.com/krishnapatidar458/krishna_Patidar_ProductCatalog/blob/main/ProductCatalog/product_catalog.postman_collection.json)
 
 Import the `.json` file into Postman to test all APIs easily.
 
